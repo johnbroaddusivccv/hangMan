@@ -11,6 +11,7 @@ var scoreUnder = [];
 var youScoreDom = document.getElementsByClassName('underscores');
 
 
+
 console.log(iChooseYou);
 // Create _
 // ===============================================================================
@@ -41,12 +42,20 @@ document.addEventListener('keypress', (event) => {
         }
 // If Wrong
 // ===============================================================================
-        wrongWord.push(keyword);
+        else wrongWord.push(keyword);
         
 console.log(scoreUnder);
 
 }});
 youScoreDom[0].innerHTML = generateUnderscore().join(' ');
+
+console.log(counter);
+
+
+
+
+
+
 
 // wrongWord.push(keyword);
     //indexOf to replace ScoreUnder
