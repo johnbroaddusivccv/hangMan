@@ -1,62 +1,41 @@
-// pseudo
 // Make an array of words
-var words = ["moltres", "flareon", "ponyta", "vulpix"];    
+var words = ["moltres", "flareon", "ponyta", "vulpix"];
 var scramble = Math.floor(Math.random() * words.length);
-var iChooseYou = words[scramble];    
-var rightWord = [];    
-var wrongWord = [];    
+var iChooseYou = words[scramble];
+var rightWord = [];
+var wrongWord = [];
 var scoreUnder = [];
+var uWin = 0;
+var uLose = 0;
 // DOM 
-// ===============================================================================
 var youScoreDom = document.getElementsByClassName('underscores');
-
-
-
+var docRightGuess = document.getElementsByClassName('rightGuess');
+var docWrongGuess = document.getElementsByClassName('wrongGuess');
 console.log(iChooseYou);
-// Create _
-// ===============================================================================
 var generateUnderscore = () => {
-    for(var i = 0; i < iChooseYou.length; i++) {
+    for (var i = 0; i < iChooseYou.length; i++) {
         scoreUnder.push('_');
-        
-    }
+}
     return scoreUnder;
 }
-// Converted Into a String
-// ===============================================================================
-
-// ===============================================================================
-// Capture Ssers Key Guess
-// ===============================================================================
 document.addEventListener('keypress', (event) => {
     var keyword = String.fromCharCode(event.keyCode);
-// If Correct
-// ===============================================================================
-    if(iChooseYou.indexOf(keyword) > -1) {
-        
+
+    if (iChooseYou.indexOf(keyword) > -1) {
         rightWord.push(keyword);
-        youScoreDom[0].innerHTML = scoreUnder.join(' ');
+
         scoreUnder[iChooseYou.indexOf(keyword)] = keyword;
-        if (scoreUnder.join(' ') == iChooseYou) {   
-            alert('You Win');
-        }
-// If Wrong
-// ===============================================================================
-        else wrongWord.push(keyword);
-        
-console.log(scoreUnder);
+        youScoreDom[0].innerHTML = scoreUnder.join(' ');
+        docRightGuess[0].innerHTML = rightWord;
+    
+    if (scoreUnder.join('') == iChooseYou) {
 
-}});
+    }
+    }
+    else {
+        wrongWord.push(keyword);
+        docWrongGuess[0].innerHTML = wrongWord;
+
+    }
+});
 youScoreDom[0].innerHTML = generateUnderscore().join(' ');
-
-console.log(counter);
-
-
-
-
-
-
-
-// wrongWord.push(keyword);
-    //indexOf to replace ScoreUnder
-// wins loses letters guessed

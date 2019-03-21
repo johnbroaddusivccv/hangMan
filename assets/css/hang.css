@@ -39,3 +39,14 @@ header {
 body {
     background: url(../images/backgroundpika.jpg)
 }
+
+h3 {
+    border: 3px solid black;
+    font-size: 20px;
+    text-align: center;
+    margin: 10px auto; 
+    height: 30px;
+    width: 80%;
+    background-color: azure;
+
+}
