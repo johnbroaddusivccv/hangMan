@@ -5,12 +5,14 @@ var iChooseYou = words[scramble];
 var rightWord = [];
 var wrongWord = [];
 var scoreUnder = [];
-var uWin = 0;
+var uWin = 1;
 var uLose = 0;
+
 // DOM 
 var youScoreDom = document.getElementsByClassName('underscores');
 var docRightGuess = document.getElementsByClassName('rightGuess');
 var docWrongGuess = document.getElementsByClassName('wrongGuess');
+ 
 console.log(iChooseYou);
 var generateUnderscore = () => {
     for (var i = 0; i < iChooseYou.length; i++) {
@@ -27,8 +29,9 @@ document.addEventListener('keypress', (event) => {
         scoreUnder[iChooseYou.indexOf(keyword)] = keyword;
         youScoreDom[0].innerHTML = scoreUnder.join(' ');
         docRightGuess[0].innerHTML = rightWord;
-    
     if (scoreUnder.join('') == iChooseYou) {
+        alert('That is Correct!');
+
 
     }
     }
@@ -39,3 +42,13 @@ document.addEventListener('keypress', (event) => {
     }
 });
 youScoreDom[0].innerHTML = generateUnderscore().join(' ');
+
+var randomNumber = 9;
+console.log(randomNumber);
+
+for (i = 0; i < randomNumber.length; i++) {
+    alert(randomNumber[i]);
+};
+if (scoreUnder.join('') == iChooseYou) {
+    
+};
