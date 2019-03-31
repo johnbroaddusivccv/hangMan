@@ -6,7 +6,9 @@ var rightWord = [];
 var wrongWord = [];
 var scoreUnder = [];
 var uWin = 1;
-var uLose = 0;
+var uLose = 1;
+var getThis = document.getElementById('winner');
+var lostThis = document.getElementById('loser');
 
 // DOM 
 var youScoreDom = document.getElementsByClassName('underscores');
@@ -31,14 +33,14 @@ document.addEventListener('keypress', (event) => {
         docRightGuess[0].innerHTML = rightWord;
     if (scoreUnder.join('') == iChooseYou) {
         alert('That is Correct!');
-
+        getThis.append(uWin);
 
     }
     }
     else {
         wrongWord.push(keyword);
         docWrongGuess[0].innerHTML = wrongWord;
-
+        lostThis.append(uLose++);
     }
 });
 youScoreDom[0].innerHTML = generateUnderscore().join(' ');
@@ -49,6 +51,7 @@ console.log(randomNumber);
 for (i = 0; i < randomNumber.length; i++) {
     alert(randomNumber[i]);
 };
-if (scoreUnder.join('') == iChooseYou) {
+if (scoreUnder.join('') == words) {
+
     
 };
